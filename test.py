@@ -49,7 +49,7 @@ for image in imagelist:
     ycrcvorigin = cv2.cvtColor(origin, cv2.COLOR_BGR2YCrCb)
     grayorigin = ycrcvorigin[:,:,0]
     # Normalized to [0,1]
-    grayorigin = cv2.normalize(grayorigin.astype('float'), None, grayorigin.min()/255, grayorigin.max()/255, cv2.NORM_MINMAX)
+    grayorigin = cv2.normalize(grayorigin.astype('float'), None, grayorigin.min()/255.0, grayorigin.max()/255.0, cv2.NORM_MINMAX)
     # Upscale (bilinear interpolation)
     heightLR, widthLR = grayorigin.shape
     heightgridLR = np.linspace(0,heightLR-1,heightLR)
